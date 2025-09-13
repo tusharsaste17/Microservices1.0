@@ -1,0 +1,18 @@
+
+server:
+  port: 8080
+spring:
+  datasource:
+    name: practice_microservices
+    url: jdbc:mysql://localhost:3306/practice_microservices
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+      show-sql: true
