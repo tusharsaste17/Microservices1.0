@@ -20,7 +20,7 @@ public class AccountController {
    /* @GetMapping("/hello")
     public String sayHello(){
         return "hello world..!!";
-    }*/
+    } */
 
     @PostMapping("/createAccount")
     public ResponseEntity<ResponseDto> createAccount(@RequestBody CustomerDto customerDto){
