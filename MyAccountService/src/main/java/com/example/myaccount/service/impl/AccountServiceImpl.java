@@ -70,6 +70,10 @@ public class AccountServiceImpl implements IAccountsService {
         return customerDto;
     }
 
+    /**
+     * @param customerDto - CustomerDto object
+     * @return boolean including if the update of Account detail is successfully or not
+     */
     @Override
     public boolean updateAccount(CustomerDto customerDto) {
         boolean isUpdated = false;
