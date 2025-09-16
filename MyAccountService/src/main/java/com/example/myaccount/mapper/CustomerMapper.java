@@ -16,6 +16,8 @@ public class CustomerMapper {
         customer.setName(customerDto.getName());
         customer.setEmail(customerDto.getEmail());
         customer.setMobNumber(customerDto.getMobNumber());
+        customer.setCreatedBy(customerDto.getCreatedBy());
+        customer.setCreatedAt(customerDto.getCreatedAt());
         return customer;
     }
 }
