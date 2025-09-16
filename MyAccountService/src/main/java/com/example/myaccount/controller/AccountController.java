@@ -24,10 +24,10 @@ public class AccountController {
 
     private IAccountsService iAccountsService;
 
-   @GetMapping("/hello")
+   /*@GetMapping("/hello")
     public String sayHello(){
         return "hello world..!!";
-    }
+    }*/
 
     @PostMapping("/createAccount")
     public ResponseEntity<ResponseDto> createAccount(@Valid @RequestBody CustomerDto customerDto){
