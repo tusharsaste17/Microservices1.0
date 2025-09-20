@@ -2,7 +2,7 @@ package com.example.myaccount.mapper;
 
 import com.example.myaccount.dto.AccountsDto;
 import com.example.myaccount.dto.CustomerDto;
-import com.example.myaccount.entity.Account;
+import com.example.myaccount.entity.Accounts;
 import com.example.myaccount.entity.Customer;
 
 public class CustomerMapper {

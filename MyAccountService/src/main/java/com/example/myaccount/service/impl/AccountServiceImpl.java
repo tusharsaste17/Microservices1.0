@@ -3,7 +3,7 @@ package com.example.myaccount.service.impl;
 import com.example.myaccount.constants.AccountConstants;
 import com.example.myaccount.dto.AccountsDto;
 import com.example.myaccount.dto.CustomerDto;
-import com.example.myaccount.entity.Account;
+import com.example.myaccount.entity.Accounts;
 import com.example.myaccount.entity.Customer;
 import com.example.myaccount.exception.CustomerAlreadyExistsException;
 import com.example.myaccount.exception.ResourceNotFoundException;
@@ -41,8 +41,8 @@ public class AccountServiceImpl implements IAccountsService {
         accountRepository.save(createNewAccount(savedCustomer));
     }
 
-    private Account createNewAccount(Customer customer){
-        Account newAccount = new Account();
+    private Accounts createNewAccount(Customer customer){
+        Accounts newAccount = new Accounts();
         newAccount.setCustomerId(customer.getCustomerId());
         int randomAccNumber = 100000 + new Random().nextInt(90000);
         newAccount.setAccountNumber(randomAccNumber);
@@ -61,7 +61,7 @@ public class AccountServiceImpl implements IAccountsService {
                 () -> new ResourceNotFoundException("Customer","Mobile Number",mobNumber)
         );
 
-        Account account =accountRepository.findByCustomerId(customer.getCustomerId()).orElseThrow(
+        Accounts account =accountRepository.findByCustomerId(customer.getCustomerId()).orElseThrow(
                 () -> new ResourceNotFoundException("Customer","Mobile Number", mobNumber)
         );
 
@@ -79,7 +79,7 @@ public class AccountServiceImpl implements IAccountsService {
         boolean isUpdated = false;
         AccountsDto accountsDto = customerDto.getAccountsDto();
         if(accountsDto != null){
-           Account account = accountRepository.findById(accountsDto.getAccountNumber()).orElseThrow(
+           Accounts account = accountRepository.findById(accountsDto.getAccountNumber()).orElseThrow(
                     ()-> new ResourceNotFoundException("Account","AccountNumber",String.valueOf(accountsDto.getAccountNumber()))
             );
             AccountsMapper.mapToAccount(accountsDto,account);
